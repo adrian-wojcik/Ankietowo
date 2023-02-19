@@ -1,5 +1,6 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, request
+from django.shortcuts import render
 
 
-def index(request):
-    return HttpResponse("<h1>Witaj , tutaj będzie widok kiedyś jak się za to zabierzemy XD </h1>")
+def main_side(request):
+    return render(request, "base.html")
