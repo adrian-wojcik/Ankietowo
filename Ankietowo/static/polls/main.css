@@ -1,0 +1,44 @@
+body {
+  padding-top: 5rem;
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+/* Polls index */
+.poll-link {
+  display: block;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.poll-link:hover {
+  background-color: #f5f5f5;
+}
+
+/* Poll detail */
+.form-check {
+  padding: 10px;
+}
+
+.form-check-input {
+  margin-top: 5px;
+}
+
+.form-check-label {
+  font-weight: normal;
+}
+
+.vote-section {
+  margin-top: 30px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
