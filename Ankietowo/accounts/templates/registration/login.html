@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div style="text-align: center;">
+    <h2 style="font-size: 2rem;">Zaloguj się</h2>
+    <form method="post" style="font-size: 2rem;">
+      {% csrf_token %}
+      <label for="username">login:</label>
+      <input type="text" name="username" id="username" required>
+      <br>
+      <label for="password">Hasło:</label>
+      <input type="password" name="password" id="password" required>
+      <br>
+      <input type="submit" value="Zaloguj">
+    </form>
+    <p style="font-size: 2rem;"> Nie masz konta? To co zrobisz, nic nie zrobisz :) </p>
+
+    <a class="btn btn-primary btn-lg mt-3" href="{% url 'polls:index' %}"
+       role="button" style="font-size: 2rem;">Wróć na główną</a>
+  </div>
+{% endblock %}

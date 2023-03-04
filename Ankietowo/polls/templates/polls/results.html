@@ -1,5 +1,5 @@
 <!-- projekt/templates/polls/results.html -->
-{% extends 'polls/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
   <h1>{{ question.question_text }}</h1>
@@ -10,5 +10,5 @@
   {% endfor %}
   </ul>
 
-  <a href="{% url 'polls:index' %}">Vote again?</a>
+  <a href="{% url 'polls:index' %}">Powrót do listy ankiet</a>
 {% endblock %}

@@ -1,9 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a class="btn btn-primary btn-lg mt-3" href="{% url 'login' %}"
+role="button" style="font-size: 2rem; text-align: left;">zaloguj się</a>
+
+<div style="text-align: center;">
+
+<h1 class="display-4" style="font-size: 3rem;">Witaj w Ankietowo!</h1>
+<p class="lead" style="font-size: 2rem;">Zapraszamy do udziału w naszych ankietach:</p>
 {% if latest_question_list %}
-    <ul>
+
+<ul style=" font-size: 2rem;">
     {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
-    </ul>
+</ul>
 {% else %}
-    <p>No polls are available.</p>
+<p style=" font-size: 2rem;">No polls are available.</p>
 {% endif %}
+</div>
+{% endblock %}

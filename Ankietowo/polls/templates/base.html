@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Ankiety za hajs{% endblock %}</title>
+
+    <style>
+        body {
+            background-image: url("{% static 'images/tapetka.jpg' %}");
+            background-size: cover;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'polls/main.css' %}">
+    {% block extrahead %}{% endblock %}
+</head>
+<body>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
