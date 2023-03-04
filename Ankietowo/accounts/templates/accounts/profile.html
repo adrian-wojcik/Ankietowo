@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Profil użytkownika</h1>
+  <h2>Tutaj będzie treść strony profilu użytkownika.</h2>
+
+ <a href="{% url 'polls:index' %}">Powrót do listy ankiet</a>
+
+<a href="{% url 'logout' %}">Wyloguj</a>
+
+
+ <h3>New Question</h3>
+  <form method="post">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Save">
+  </form>
+
+{% endblock %}

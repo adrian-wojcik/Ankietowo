@@ -3,4 +3,5 @@
 {% block content %}
   <h2>You have been logged out.</h2>
   <p><a href="{% url 'login' %}">Log in again</a></p>
+  <a href="{% url 'polls:index' %}">Powrót do strony głównej</a>
 {% endblock %}
