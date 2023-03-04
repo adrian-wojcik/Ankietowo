@@ -1,13 +1,11 @@
-<!-- projekt/templates/polls/question_form.html -->
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-  <h1>New Question</h1>
-  <form method="post">
-    {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-    </table>
-    <input type="submit" value="Save">
-  </form>
+<h1>Create a new question with choices</h1>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <input type="submit" name="create" value="Create">
+</form>
 {% endblock %}
