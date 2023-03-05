@@ -7,7 +7,7 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.utils.decorators import method_decorator
 
-from .forms import ChoiceForm, QuestionCreateForm, QuestionForm
+from .forms import ChoiceForm, QuestionCreateForm, QuestionForm, QuestionFormUser
 from .models import Choice, Question
 
 
@@ -51,7 +51,7 @@ def vote(request, question_id):
 
 class QuestionCreateView(CreateView):
     model = Question
-    form_class = QuestionForm
+    form_class = QuestionFormUser
     template_name = 'polls/question_form.html'
     success_url = reverse_lazy('polls:index')
 

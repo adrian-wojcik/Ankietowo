@@ -5,6 +5,6 @@ from django.dispatch import receiver
 
 @receiver(post_save, sender=User)
 def add_user_to_users_group(sender, instance, created, **kwargs):
-    if created and not instance.is_superuser:
-        users_group = Group.objects.get(name='users')
+    if created:
+        users_group, created = Group.objects.get_or_create(name='users')
         instance.groups.add(users_group)
