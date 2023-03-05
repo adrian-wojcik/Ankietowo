@@ -8,6 +8,11 @@ class ChoiceForm(forms.ModelForm):
         fields = ('choice_text',)
 
 class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Question
+        fields = ['question_text']
+
+class QuestionFormUser(forms.ModelForm):
     choice1 = forms.CharField(max_length=200, label='Choice 1')
     choice2 = forms.CharField(max_length=200, label='Choice 2')
     choice3 = forms.CharField(max_length=200, label='Choice 3', required=False)
@@ -18,7 +23,6 @@ class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
         fields = ['question_text']
-
 
 class QuestionCreateForm(forms.Form):
     question_text = forms.CharField(max_length=200)
