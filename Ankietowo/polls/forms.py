@@ -15,12 +15,12 @@ class QuestionForm(forms.ModelForm):
 
 
 class QuestionFormUser(forms.ModelForm):
-    choice1 = forms.CharField(max_length=200, label="Choice 1")
-    choice2 = forms.CharField(max_length=200, label="Choice 2")
-    choice3 = forms.CharField(max_length=200, label="Choice 3", required=False)
-    choice4 = forms.CharField(max_length=200, label="Choice 4", required=False)
-    choice5 = forms.CharField(max_length=200, label="Choice 5", required=False)
-    choice6 = forms.CharField(max_length=200, label="Choice 6", required=False)
+    choice1 = forms.CharField(max_length=200, label="Odpowiedź 1")
+    choice2 = forms.CharField(max_length=200, label="Odpowiedź 2")
+    choice3 = forms.CharField(max_length=200, label="Odpowiedź 3", required=False)
+    choice4 = forms.CharField(max_length=200, label="Odpowiedź 4", required=False)
+    choice5 = forms.CharField(max_length=200, label="Odpowiedź 5", required=False)
+    choice6 = forms.CharField(max_length=200, label="Odpowiedź 6", required=False)
 
     class Meta:
         model = Question
@@ -29,9 +29,9 @@ class QuestionFormUser(forms.ModelForm):
 
 class QuestionCreateForm(forms.Form):
     question_text = forms.CharField(max_length=200)
-    choice1 = forms.CharField(max_length=200, label="Choice 1")
-    choice2 = forms.CharField(max_length=200, label="Choice 2")
-    choice3 = forms.CharField(max_length=200, label="Choice 3", required=False)
-    choice4 = forms.CharField(max_length=200, label="Choice 4", required=False)
-    choice5 = forms.CharField(max_length=200, label="Choice 5", required=False)
-    choice6 = forms.CharField(max_length=200, label="Choice 6", required=False)
+    choice1 = forms.CharField(max_length=200, label="Odpowiedź 1")
+    choice2 = forms.CharField(max_length=200, label="Odpowiedź 2")
+    choice3 = forms.CharField(max_length=200, label="Odpowiedź 3", required=False)
+    choice4 = forms.CharField(max_length=200, label="Odpowiedź 4", required=False)
+    choice5 = forms.CharField(max_length=200, label="Odpowiedź 5", required=False)
+    choice6 = forms.CharField(max_length=200, label="Odpowiedź 6", required=False)
