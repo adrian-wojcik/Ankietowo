@@ -4,14 +4,17 @@
 
 <a class="btn btn-primary btn-lg mt-3" href="{% url 'login' %}"
 role="button" style="font-size: 2rem; text-align: left;">zaloguj się</a>
+<br>
 
+<a class="btn btn-primary btn-lg mt-3" href="{% url 'accounts:register' %}"
+role="button" style="font-size: 2rem; text-align: left;">Zarejestruj się</a>
 <div style="text-align: center;">
 
 <h1 class="display-4" style="font-size: 3rem;">Witaj w Ankietowo!</h1>
 <p class="lead" style="font-size: 2rem;">Zapraszamy do udziału w naszych ankietach:</p>
 {% if latest_question_list %}
 
-<ul style=" font-size: 2rem;">
+<ul style=" font-size: 2rem; list-style-type: none;">
     {% for question in latest_question_list %}
     <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
