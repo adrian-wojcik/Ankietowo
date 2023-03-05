@@ -7,4 +7,4 @@ class QuestionForm(forms.ModelForm):
 
     class Meta:
         model = Question
-        fields = ('question_text', 'create_date')
+        fields = ("question_text", "create_date")

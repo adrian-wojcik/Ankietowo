@@ -11,16 +11,17 @@ class ChoiceInline(admin.TabularInline):
 class QuestionAdmin(admin.ModelAdmin):
     form = QuestionForm
     fieldsets = [
-        (None,               {'fields': ['question_text']}),
+        (None, {"fields": ["question_text"]}),
     ]
     inlines = [ChoiceInline]
-    list_display = ('question_text', 'create_date', 'was_published_recently')
-    list_filter = ['create_date']
-    search_fields = ['question_text']
+    list_display = ("question_text", "create_date", "was_published_recently")
+    list_filter = ["create_date"]
+    search_fields = ["question_text"]
 
-    def add_view(self, request, form_url='', extra_context=None):
-        self.exclude = ('create_date',)
+    def add_view(self, request, form_url="", extra_context=None):
+        self.exclude = ("create_date",)
         return super().add_view(request, form_url, extra_context)
+
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)

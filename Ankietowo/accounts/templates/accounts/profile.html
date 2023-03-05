@@ -1,23 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Profil użytkownika</h1>
-  <h2>Tutaj będzie treść strony profilu użytkownika.</h2>
-
- <a href="{% url 'polls:index' %}">Powrót do listy ankiet</a>
-
-<a href="{% url 'polls:question_create' %}">stwórz ankietę:</a>
-
-<a href="{% url 'logout' %}">Wyloguj</a>
-
-
- <h3>New Question</h3>
-  <form method="post">
-    {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-    </table>
-    <input type="submit" value="Save">
-  </form>
-
+ {% if created %}
+      <h2 style="font-size: 2rem;">Konto utworzone</h2>
+      <p style="font-size: 2rem;">Witaj w naszym serwisie! Możesz teraz zalogować się na swoje konto.</p>
+<a class="btn btn-primary btn-lg mt-3" href="{% url 'login' %}"
+role="button" style="font-size: 2rem; text-align: left;">zaloguj się</a>
+    {% else %}
+      <h2 style="font-size: 2rem;">Twój profil</h2>
+   <h1>Witaj użytkowniku</h1>
+  <h2>możesz tylko dodawać ankiety, nie możesz ich usuwać.</h2>
+  <h3> "To, co zostało opublikowane w Internecie, pozostaje nieodwracalnie zarchiwizowane i dostępne dla przyszłych pokoleń." </h3>
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <a href="{% url 'polls:index' %}" class="btn btn-primary">Powrót do listy ankiet</a>
+    <a href="{% url 'polls:question_create' %}" class="btn btn-primary">Stwórz ankietę</a>
+    <a href="{% url 'logout' %}" class="btn btn-primary">Wyloguj</a>
+  </div>
+{% endif %}
 {% endblock %}

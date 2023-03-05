@@ -1,25 +1,46 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Register an account</h2>
-  <form method="post">
-    {% csrf_token %}
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" class="form-control" required>
+  <div style="text-align: center;">
+    <h2 style="font-size: 2rem;">Zarejestruj się</h2>
+    <form method="post" style="font-size: 2rem;">
+      {% csrf_token %}
+      <div class="form-group row">
+        <label for="username" class="col-sm-3 col-form-label text-right">Nazwa użytkownika:</label>
+        <div class="col-sm-9">
+          <input type="text" name="username" id="username" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-sm-3 col-form-label text-right">Adres e-mail:</label>
+        <div class="col-sm-9">
+          <input type="email" name="email" id="email" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password1" class="col-sm-3 col-form-label text-right">Hasło:</label>
+        <div class="col-sm-9">
+          <input type="password" name="password1" id="password1" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password2" class="col-sm-3 col-form-label text-right">Potwierdź hasło:</label>
+        <div class="col-sm-9">
+          <input type="password" name="password2" id="password2" class="form-control" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Zarejestruj</button>
+    </form>
+
+    <p style="font-size: 2rem;"> Masz już konto? Zaloguj się: </p>
+
+    <div class="d-flex flex-column">
+      <a class="btn btn-primary btn-lg mt-3" href="{% url 'login' %}"
+         role="button" style="font-size: 2rem;">Zaloguj się</a>
+      <br>
+      <br>
+      <a class="btn btn-primary btn-lg mt-3" href="{% url 'polls:index' %}"
+         role="button" style="font-size: 2rem;">Wróć na główną</a>
     </div>
-    <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" name="email" id="email" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="password1">Password</label>
-      <input type="password" name="password1" id="password1" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="password2">Confirm password</label>
-      <input type="password" name="password2" id="password2" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-  </form>
+  </div>
 {% endblock %}
