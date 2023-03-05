@@ -1,0 +1,21 @@
+{% extends "polls/base.html" %}
+
+{% block content %}
+<h1>Confirm creation of question and choices</h1>
+
+<p>Question: {{ question.question_text }}</p>
+<p>Publication date: {{ question.pub_date }}</p>
+
+<p>Choices:</p>
+<ul>
+  {% for choice in choices %}
+  <li>{{ choice.choice_text }}</li>
+  {% endfor %}
+</ul>
+
+<form method="POST">
+  {% csrf_token %}
+  <input type="submit" name="confirm" value="Confirm">
+  <input type="submit" name="cancel" value="Cancel">
+</form>
+{% endblock %}
